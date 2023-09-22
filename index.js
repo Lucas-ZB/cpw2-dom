@@ -3,6 +3,8 @@
  */
 function background(){
 
+    document.body.style.backgroundColor = '#BECCC3';
+
     /**
      * Tarefa/Issue  1
      *
@@ -19,6 +21,12 @@ function background(){
  */
 function show(){
 
+    const firstName = document.getElementById("lname").value;
+    const lastName = document.getElementById("fname").value;
+
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = 'Nome: ${firstName}<br>Sobrenome: ${lastName}';
+
      /**
       * Issue  2
       *
@@ -33,8 +41,20 @@ function show(){
  */
 function search(){
 
-    var data = [{name: "Rodrigo"}, {name: "Ricardo"}, {name: "Fabio"}, {name: "Alex"}, {name: "Sílvia"}];
+    var nomeCompleto = document.getElementById("name");
+    var nomes = document.getElementById("search");
+    nomes.innerHTML = "";
 
+    var data = [{name: "Rodrigo"}, {name: "Ricardo"}, {name: "Fabio"}, {name: "Alex"}, {name: "Silvia"}];
+
+    for (var I = 0; I < data.length; Index++) {
+
+        if (data[I].name.toLowerCase().includes(nomeCompleto.value.toLowerCase())) {
+            nomes.innerHTML += data[I].name + "<br>";
+                    }
+            
+            
+        }
     /**
      * Issue 3
      *
